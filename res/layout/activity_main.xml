@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/topView" android:layout_gravity="center" android:background="#735765"
+            android:textColor="#ffffff"/>
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_gravity="center">
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:layout_weight="1">
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Time"
+                        android:id="@+id/btnTime" android:layout_column="0" android:layout_weight="1"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Repeat"
+                        android:id="@+id/btnRepeat" android:layout_column="1" android:layout_weight="1"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:layout_weight="1">
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Ringtone"
+                        android:id="@+id/btnRing" android:layout_column="0" android:layout_weight="1"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Type"
+                        android:id="@+id/btnType" android:layout_column="1" android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView" android:src="@drawable/turntable" android:alpha="100"
+                android:scaleType="center"/>
+    </FrameLayout>
+
+</LinearLayout>
