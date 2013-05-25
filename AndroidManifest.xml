@@ -12,22 +12,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-<<<<<<< HEAD
         android:theme="@android:style/Theme.NoTitleBar">
         <activity android:name=".MainActivity">
-=======
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.d2.soundalarm.MainActivity"
-            android:label="@string/app_name" >
-            <!-- intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter-->
-        </activity>
-        <activity android:name="com.d2.soundalarm.BeeActivity">
->>>>>>> ace5373d20f3638cc065aba6e995feeee6256d81
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
