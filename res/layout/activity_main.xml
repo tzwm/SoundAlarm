@@ -5,6 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+<<<<<<< HEAD
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="120dp"
@@ -55,5 +56,20 @@
                 android:id="@+id/imageView" android:src="@drawable/turntable" android:alpha="100"
                 android:scaleType="center"/>
     </FrameLayout>
+=======
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world" />
+    </LinearLayout>
+>>>>>>> ace5373d20f3638cc065aba6e995feeee6256d81
 
 </LinearLayout>
