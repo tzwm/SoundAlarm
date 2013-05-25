@@ -72,7 +72,7 @@ public class BeeSurface extends SurfaceView implements SurfaceHolder.Callback,Ru
 			canvas.drawColor(Color.BLACK);
 			x+=v*deltatick*Math.cos(dir*Math.PI/180);
 			y+=v*deltatick*Math.sin(dir*Math.PI/180);
-			//TODO »­±³¾°
+			//TODO draw bg
 			if (x+r>w){ dir=180-dir; x=w-r;}
 			if (x-r<0){ dir=180-dir; x=r;}
 			if (y+r>h){ dir=-dir; y=h-r;}

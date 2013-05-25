@@ -11,7 +11,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/topView" android:layout_gravity="center" android:background="#735765"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="40sp"
+            android:typeface="sans"/>
     <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -49,11 +51,10 @@
                         android:id="@+id/btnType" android:layout_column="1" android:layout_weight="1"/>
             </TableRow>
         </TableLayout>
-        <ImageView
-                android:layout_width="fill_parent"
+        <com.d2.soundalarm.DrawView
                 android:layout_height="match_parent"
-                android:id="@+id/imageView" android:src="@drawable/turntable" android:alpha="100"
-                android:scaleType="center"/>
+                android:layout_width="fill_parent"
+            ></com.d2.soundalarm.DrawView>
     </FrameLayout>
 
 </LinearLayout>
