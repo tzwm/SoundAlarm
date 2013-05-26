@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".gui.mainButton"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".BeeActivity"/>
+        <activity android:name=".ShakeActivity"/>
+        <activity android:name=".ShoutActivity"/>
+        <activity android:name=".WordActivity"/>
     </application>
 </manifest>
