@@ -12,39 +12,61 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cancel"
-                android:layout_alignParentLeft="true" android:background="#715563"/>
+                android:padding="30px"
+                android:background="#715563"
+                android:layout_alignParentLeft="true" />
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="30px"
                 android:id="@+id/save"
                 android:layout_alignParentRight="true" android:background="#715563"/>
     </RelativeLayout>
     <com.d2.soundalarm.setting.MySurfaceView
             android:id="@+id/sfv"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"/>
+            android:layout_height="fill_parent" android:layout_weight="1"/>
+
+    <!--android:layout_alignParentBottom="true"
+    android:layout_marginBottom="76px"/-->
     <TableLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="76px"
+            android:background="#715563" android:layout_weight="0">
         <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton3" android:layout_weight="1"/>
+                    android:id="@+id/iButton1" android:layout_weight="1"
+                    android:src="@drawable/button1"
+                    android:background="#715563" />
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton4" android:layout_weight="1"/>
+                    android:id="@+id/iButton2" android:layout_weight="1"
+                    android:src="@drawable/button2"
+                    android:background="#715563" />
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton5" android:layout_weight="1"/>
+                    android:id="@+id/iButton3" android:layout_weight="1"
+                    android:src="@drawable/button3"
+                    android:background="#715563" />
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton6" android:layout_weight="1"/>
+                    android:id="@+id/iButton4" android:layout_weight="1"
+                    android:src="@drawable/button4"
+                    android:background="#715563" />
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iButton5" android:layout_weight="1"
+                    android:src="@drawable/button5"
+                    android:background="#715563" />
         </TableRow>
     </TableLayout>
+
 </LinearLayout>

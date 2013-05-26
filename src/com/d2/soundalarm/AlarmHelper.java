@@ -16,7 +16,12 @@ public class AlarmHelper {
 	
 	private Context c;
 	private AlarmManager mAlarmManager;
-	
+	public static AlarmHelper instance;
+    public static AlarmHelper getInstance(Context c){
+        if (instance==null) instance=new AlarmHelper(c);
+        return instance;
+    }
+
 	public AlarmHelper(Context c) {
 		this.c = c;
 		mAlarmManager = (AlarmManager) c
@@ -31,12 +36,15 @@ public class AlarmHelper {
 		return id;
 	}
 	
-	class Alarm{
+	static public class Alarm{
 		int id;
 		String title;
 		String content;
 		long time;
 		boolean opened=true;
+        public Alarm() {
+
+        }
 		public Alarm(int id,String title,String content,long time) {
 			this.id=id;
 			this.time=time;
@@ -56,6 +64,13 @@ public class AlarmHelper {
 	}
 	    
 	public void openAlarm(int id, String title, String content, long time) {
+		Alarm alarm=list.get(id);
+		if (alarm!=null) {
+			alarm.opened=true;
+		}else{
+			alarm=new Alarm(id, title, content, time);
+			list.put(id, alarm);
+		}
 		Intent intent = new Intent();
 		intent.putExtra("_id", id);
 		intent.putExtra("title", title);
@@ -63,7 +78,7 @@ public class AlarmHelper {
 		intent.setClass(c, AlarmReceiver.class);
 		PendingIntent pi = PendingIntent.getBroadcast(c, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		mAlarmManager.set(AlarmManager.RTC_WAKEUP, time, pi);
-		list.put(id, new Alarm(id, title, content, time));
+		
 	}
 	 
 	public boolean closeAlarm(int id) {

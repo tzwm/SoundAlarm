@@ -53,9 +53,10 @@ public class WordActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_word);
-		map.put("瀛︽牎","school" );
-		map.put("铚滆渹", "bee");
-		map.put("鍗曡瘝","word");
+		map.put("学校","school" );
+		map.put("蜜蜂", "bee");
+		map.put("单词","word");
+		map.put("大叫","shout");
 		Set<String> keys=map.keySet();
 		Iterator<String> iter=keys.iterator();
 		int n=(int)(Math.random()*map.size());

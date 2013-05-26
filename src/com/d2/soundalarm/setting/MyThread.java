@@ -20,11 +20,12 @@ public class MyThread extends Thread {
     private Bitmap b1,b2;
     private int cx,cy;
     private int b1x,b1y,b2x,b2y,b1w,b1h,b2w,b2h;
-    private int b2r;
+    private int b1r,b2r;
     private int textX,textY;
     private int mode,ap;
-    private int hour,minute;
+    public static int hour,minute;
     private int rotate;
+    private Typeface mFace;
 
 //    private int hour;
 //    private int minute;
@@ -38,8 +39,9 @@ public class MyThread extends Thread {
         this.sfh = sfh;
         isRun = true;
         this.res = res;
-        b1 = BitmapFactory.decodeResource(res, R.drawable.b1);
-        b2 = BitmapFactory.decodeResource(res, R.drawable.b2);
+        //mFace = Typeface.createFromAsset(res.getAssets(),"impact.ttf");
+        b1 = BitmapFactory.decodeResource(res, R.drawable.b1_);
+        b2 = BitmapFactory.decodeResource(res, R.drawable.b2_);
         rotate = 0;
         hour = 3;
         minute = 15;
@@ -58,6 +60,7 @@ public class MyThread extends Thread {
                 b1y = b1x = (c.getWidth()-b1w)/2;
                 b2h = b2w = b1w*2/3;
                 b2y = b2x = cx-b2w/2;
+                b1r = b1w/2;
                 b2r = b1w/6;
                 Paint p = new Paint();
                 c.drawColor(Color.argb(255,113,85,99));
@@ -72,9 +75,10 @@ public class MyThread extends Thread {
                 bb2 = Bitmap.createBitmap(bb2,0,0,bb2.getWidth(),bb2.getHeight(),m1,true);
                 c.drawBitmap(bb2, cx-bb2.getWidth()/2, cy-bb2.getHeight()/2, p);
 
-                p.setColor(Color.BLUE);
-                p.setTextSize(b1w/9);
-                p.setTypeface(Typeface.DEFAULT_BOLD);
+                p.setColor(Color.argb(255,113,85,99));
+                p.setTextSize(b1w / 8);
+                //p.setTypeface(Typeface.create("impact", Typeface.BOLD));
+                p.setTypeface(mFace);
                 p.setTextAlign(Paint.Align.CENTER);
                 Rect textBounds = new Rect();
                 String time = getTimeString();
@@ -144,6 +148,7 @@ public class MyThread extends Thread {
             mode = 1-mode;
             return;
         }
+        if ((x-cx)*(x-cx)+(y-cy)*(y-cy)>b1r*b1r) return;
         if (x>cx && y>=cy) {
             setRotate((int)Math.round(Math.atan((y-cy)/(x-cx))/Math.PI*180));
         } else if (x<=cx && y>cy) {
@@ -157,6 +162,7 @@ public class MyThread extends Thread {
 
     public void keyMove(float x, float  y) {
         if ((x-cx)*(x-cx)+(y-cy)*(y-cy)<=b2r*b2r) return;
+        if ((x-cx)*(x-cx)+(y-cy)*(y-cy)>b1r*b1r) return;
         if (x>cx && y>=cy) {
             setRotate((int)Math.round(Math.atan((y-cy)/(x-cx))/Math.PI*180));
         } else if (x<=cx && y>cy) {
@@ -167,5 +173,21 @@ public class MyThread extends Thread {
             setRotate((int)Math.round(Math.atan((x-cx)/(cy-y))/Math.PI*180)+270);
         }
         setTime();
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 }

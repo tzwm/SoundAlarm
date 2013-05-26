@@ -5,30 +5,48 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.NoTitleBar" >
         <activity
             android:name="com.d2.soundalarm.MainActivity"
             android:label="@string/app_name" >
-            <!-- intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter-->
-        </activity>
-        <activity android:name="com.d2.soundalarm.BeeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.d2.soundalarm.BeeActivity">
+            <!--intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter-->
+        </activity>
+        <receiver android:name="com.d2.soundalarm.AlarmReceiver"> </receiver>
+        <activity android:name="com.d2.soundalarm.WordActivity">
+            <!-- intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter-->
+        </activity>
+        <activity android:name=".SettingActivity">
+            <!-- intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter-->
+        </activity>
+    	<activity android:name=".ShakeActivity"/>
+    	<activity android:name=".MorningShoutActivity"/>
     </application>
+   
 
 </manifest>

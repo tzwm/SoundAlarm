@@ -3,5 +3,9 @@
 
     <string name="app_name">SoundAlarm</string>
     <string name="action_settings">Settings</string>
+    <string name="blow_me">Shout!</string>
+    <string name="time">system time</string>
+    <string name="getup">怒吼吧!少年</string>
+
 
 </resources>
